@@ -1,3 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;0,1000;1,700;1,800;1,900;1,1000&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .cornered-border {
+    border-radius: 0 0.55rem 0 0.55rem;
+  }
+  .cornered-border-l {
+    border-radius: 0 2rem 0 2rem;
+  }
+  .cornered-border-r-b {
+    border-radius: 0 0 2rem 0;
+  }
+  .box-shadow {
+    box-shadow: 0 0 15px rgb(0 0 0 / 10%);
+  }
+  .an-animation {
+    animation: 100ms ease-in-out 0s normal none 1 running fadeInDown;
+  }
+  .bg-custom {
+    background-size: 200%;
+  }
+  .btn {
+    background-size: 200%;
+    transition: 0.6s;
+    box-shadow: 0px 7px 21px 0px rgba(245, 24, 24, 0.4);
+    background-image: linear-gradient(to left, #ff4c31, #d60939, #ff4c31);
+    background-position: right;
+  }
+}

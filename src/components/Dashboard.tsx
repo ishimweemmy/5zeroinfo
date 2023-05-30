@@ -24,6 +24,11 @@ import { BiStats } from "react-icons/bi";
 import { FaQuestionCircle } from "react-icons/fa";
 import { RiFolderWarningLine } from "react-icons/ri";
 import { LuBanknote } from "react-icons/lu";
+import { MdWifiOff } from "react-icons/md";
+import { AiOutlineWifi } from "react-icons/ai";
+import { HiViewGrid } from "react-icons/hi";
+
+import Card from "./dashboard/Card";
 
 const drawerWidth = 240;
 
@@ -170,8 +175,59 @@ export default function Dashboard() {
     },
   ]);
 
+  const [cards, setCards] = useState([
+    {
+      coinType: "Binance Coin",
+      amount: 0.000000000123,
+      power: 0,
+      imgSrc: "bnb.svg",
+      color: "linear-gradient(to right, #8e2de2, #4a00e0)",
+    },
+    {
+      coinType: "Tron",
+      amount: 0.000000000123,
+      power: 0,
+      imgSrc: "tron.svg",
+      color: "linear-gradient(to right, #2c5364, #203a43, #0f2027)",
+    },
+    {
+      coinType: "Dodge Coin",
+      amount: 0.000000000123,
+      power: 0,
+      imgSrc: "dogecoin.svg",
+      color: "linear-gradient(45deg, #00b09b, #96c93d)",
+    },
+    {
+      coinType: "Bit Coin",
+      amount: 0.000000000123,
+      power: 0,
+      imgSrc: "bitcoin1.svg",
+      color: "linear-gradient(45deg, #ee0979, #ff6a00)",
+    },
+  ]);
+
+  const [accountSummary, setAccountSummary] = useState([
+    {
+      amount: 0.000000000123,
+      icon: <AiOutlineWifi />,
+      color: "success",
+    },
+    {
+      amount: 0.000000000123,
+      icon: <MdWifiOff />,
+      color: "success",
+    },
+    {
+      amount: 0.000000000123,
+      icon: <HiViewGrid />,
+      color: "success",
+    },
+  ]);
+
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box
+      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+    >
       <CssBaseline />
       <AppBar
         position="fixed"
@@ -179,7 +235,7 @@ export default function Dashboard() {
         sx={{ backgroundColor: "white", height: "5rem", boxShadow: "none" }}
         className="w-[80%]"
       >
-        <Toolbar className="w-full h-full shadow-md flex items-center justify-end ">
+        <Toolbar className="w-full h-full shadow-md flex items-center justify-end">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -228,7 +284,10 @@ export default function Dashboard() {
           }}
         >
           {open && (
-            <span className="text-sm mx-2 font-semibold uppercase transition" onClick={() => setSidebarItems}>
+            <span
+              className="text-sm mx-2 font-semibold uppercase transition"
+              onClick={() => setSidebarItems}
+            >
               Account
             </span>
           )}
@@ -317,9 +376,40 @@ export default function Dashboard() {
           })}
         </List>
       </Drawer>
-      <Box component="main" sx={{ p: 3 }} className="w-full  h-full bg-black">
-
-      </Box>
+      <div className="w-[75%] h-full flex flex-col items-center justify-center pt-[8rem] py-[2rem] gap-8">
+        <div className="w-full h-fit flex flex-col items-start justify-center gap-4">
+          <span className="text-cblack text-4xl font-semibold">
+            Hi, ishimweemmanuel2005 👋
+          </span>
+          <span className="w-full text-cblack text-start text-base font-semibold p-4 border border-cblack rounded-md bg-gray-200">
+            Only today the bonus +5% to the deposit when replenishing from $25
+          </span>
+        </div>
+        <div className="w-full h-fit flex flex-col items-center justify-center gap-4">
+          <span className="text-cblack uppercase text-base font-bold self-start">
+            power distribution
+          </span>
+          <div className="w-full h-fit flex items-center justify-between border-t border-t-gray-200 py-4 gap-4">
+            {cards.map((card, index) => {
+              return (
+                <Card
+                  key={index}
+                  coinType={card.coinType}
+                  amount={card.amount}
+                  power={card.power}
+                  imgSrc={card.imgSrc}
+                  color={card.color}
+                />
+              );
+            })}
+          </div>
+        </div>
+        <div className="w-full h-fit flex flex-col items-center justify-center gap-4">
+          <span className="text-cblack uppercase text-base font-bold self-start">
+            Account summary
+          </span>
+        </div>
+      </div>
     </Box>
   );
 }
