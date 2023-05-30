@@ -1,4 +1,4 @@
-import { styled, useTheme, Theme, CSSObject } from "@mui/material/styles";
+import { styled, Theme, CSSObject } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import MuiDrawer from "@mui/material/Drawer";
 import MuiAppBar, { AppBarProps as MuiAppBarProps } from "@mui/material/AppBar";
@@ -97,7 +97,6 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 export default function Dashboard() {
-  const theme = useTheme();
   const [open, setOpen] = useState(true);
 
   const handleDrawerOpen = () => {
@@ -229,7 +228,7 @@ export default function Dashboard() {
           }}
         >
           {open && (
-            <span className="text-sm mx-2 font-semibold uppercase transition">
+            <span className="text-sm mx-2 font-semibold uppercase transition" onClick={() => setSidebarItems}>
               Account
             </span>
           )}
