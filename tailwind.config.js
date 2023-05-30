@@ -19,7 +19,7 @@ export default {
       fontFamily: {
         muli: ["Mulish", "sans-serif"],
       },
-      backgroundImage: (theme) => ({
+      backgroundImage: () => ({
         img1: "url('./src/assets/section_bg01.png')",
         "footer-bg": "url('./src/assets/footer_bg.png')",
         banner: "url('./src/assets/banner.svg')",

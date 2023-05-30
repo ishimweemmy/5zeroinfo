@@ -24,9 +24,9 @@ import { BiStats } from "react-icons/bi";
 import { FaQuestionCircle } from "react-icons/fa";
 import { RiFolderWarningLine } from "react-icons/ri";
 import { LuBanknote } from "react-icons/lu";
-import { MdWifiOff } from "react-icons/md";
-import { AiOutlineWifi } from "react-icons/ai";
-import { HiViewGrid } from "react-icons/hi";
+// import { MdWifiOff } from "react-icons/md";
+// import { AiOutlineWifi } from "react-icons/ai";
+// import { HiViewGrid } from "react-icons/hi";
 
 import Card from "./dashboard/Card";
 
@@ -206,23 +206,23 @@ export default function Dashboard() {
     },
   ]);
 
-  const [accountSummary, setAccountSummary] = useState([
-    {
-      amount: 0.000000000123,
-      icon: <AiOutlineWifi />,
-      color: "success",
-    },
-    {
-      amount: 0.000000000123,
-      icon: <MdWifiOff />,
-      color: "success",
-    },
-    {
-      amount: 0.000000000123,
-      icon: <HiViewGrid />,
-      color: "success",
-    },
-  ]);
+  // const [accountSummary, setAccountSummary] = useState([
+  //   {
+  //     amount: 0.000000000123,
+  //     icon: <AiOutlineWifi />,
+  //     color: "success",
+  //   },
+  //   {
+  //     amount: 0.000000000123,
+  //     icon: <MdWifiOff />,
+  //     color: "success",
+  //   },
+  //   {
+  //     amount: 0.000000000123,
+  //     icon: <HiViewGrid />,
+  //     color: "success",
+  //   },
+  // ]);
 
   return (
     <Box
@@ -409,6 +409,7 @@ export default function Dashboard() {
             Account summary
           </span>
         </div>
+        <div onClick={() => setCards}></div>
       </div>
     </Box>
   );
