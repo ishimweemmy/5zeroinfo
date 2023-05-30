@@ -318,8 +318,8 @@ export default function Dashboard() {
           })}
         </List>
       </Drawer>
-      <Box component="main" sx={{ p: 3 }}>
-        <DrawerHeader />
+      <Box component="main" sx={{ p: 3 }} className="w-full  h-full bg-black">
+
       </Box>
     </Box>
   );
