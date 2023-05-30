@@ -8,11 +8,25 @@ export default {
         coloring: "linear-gradient(to left, #ff4c31, #d60939, #ff4c31)",
         cblack: "#072366",
         colord: "#ff4c31",
-        success: "#15ca20"
+        success: "#15ca20",
+        darkblue: "#002d5b",
+        darkblue2: "#493773",
+        primred: "#e31f36",
+        secondred: "#e62335",
+        primviolet: "#735dba",
+        custblack: "#1f1f1f",
       },
+      fontFamily: {
+        muli: ["Mulish", "sans-serif"],
+      },
+      backgroundImage: (theme) => ({
+        img1: "url('./src/assets/section_bg01.png')",
+        "footer-bg": "url('./src/assets/footer_bg.png')",
+        banner: "url('./src/assets/banner.svg')",
+      }),
       gridTemplateColumns: {
         powerCard: "80% 20%",
-      }
+      },
     },
   },
   plugins: [],

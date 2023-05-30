@@ -10,10 +10,18 @@ function Landing() {
         <p className="text-[#535a70]">Call Us: (+84) 939 512 999</p>
         <p className="text-[#535a70]"> info@trxmining.com</p>
         <div className="flex justify-center items-center gap-4">
-          <a href="#"><GrFacebookOption className="text-[#535a70]"/></a>
-          <a href="#"><GrTwitter className="text-[#535a70]"/></a>
-          <a href="#"><GrLinkedinOption className="text-[#535a70]"/></a>
-          <a href="#"><GrGooglePlus className="text-[#535a70]"/></a>
+          <a href="#">
+            <GrFacebookOption className="text-[#535a70]" />
+          </a>
+          <a href="#">
+            <GrTwitter className="text-[#535a70]" />
+          </a>
+          <a href="#">
+            <GrLinkedinOption className="text-[#535a70]" />
+          </a>
+          <a href="#">
+            <GrGooglePlus className="text-[#535a70]" />
+          </a>
         </div>
       </div>
       <NavBar />
@@ -254,7 +262,9 @@ function Landing() {
           <h1 className="text-darkblue font-bold text-2xl lg:text-4xl w-[70%] text-left mb-5">
             What Our Clint Think About Us!
           </h1>
-          <div className="w-full lg:w-[40rem]"><Carousel /></div>
+          <div className="w-full lg:w-[40rem]">
+            <Carousel />
+          </div>
         </section>
         <section className="my-20">
           <img
@@ -324,7 +334,7 @@ function Landing() {
             <p className="text-[#736e73] font-medium">Contact</p>
           </div>
           <div className="flex flex-col gap-7">
-            <h1 className="text-white font-medium text-xs">NEWSLATTER</h1>
+            <h1 className="text-white font-medium text-xl">NEWSLATTER</h1>
             <p className="text-[#736e73] font-medium">
               Subscribe now to get daily updates
             </p>
@@ -332,7 +342,7 @@ function Landing() {
               <input
                 type="text"
                 placeholder="Email Address"
-                className="outline-none bg-transparent w-[75%] pl-3"
+                className="outline-none bg-transparent w-[75%] pl-3 text-[#736e73]"
               />
               <button className="h-full w-[25%] bg-[#0a0f17] text-primred">
                 Send
