@@ -1,7 +1,7 @@
 import { Route } from "react-router-dom";
 import NavWrapper from "./components/global/NavWrapper";
 import Dashboard from "./components/Dashboard";
-import Landing from "./pages/landing";
+import Landing from "./pages/Landing";
 
 const App = () => {
   return (
