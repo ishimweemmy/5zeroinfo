@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-
-export default function NavBar() {
+import { BiHome } from "react-icons/bi";
+import { FiUsers } from "react-icons/fi";
+import { IoAnalyticsSharp } from "react-icons/io5";
+export default function NavBar2() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -41,11 +42,24 @@ export default function NavBar() {
       >
         <nav className="w-full py-5 text-black">
           <ul className="flex flex-col gap-3 pl-4">
-            <NavLink to="home">Home</NavLink>
-            <NavLink to="status">Status</NavLink>
-            <NavLink to="faq">FAQ</NavLink>
-            <NavLink to="account">Account</NavLink>
-            <NavLink to="contact">Contact</NavLink>
+            <a href="" className="flex items-center gap-1 text-lg font-bold">
+              <BiHome /> Home
+            </a>
+            <a href="" className="flex items-center gap-1 text-lg font-bold">
+              <IoAnalyticsSharp /> Analytics
+            </a>
+            <a href="" className="flex items-center gap-1 text-lg font-bold">
+              <FiUsers /> Affiliate Program
+            </a>
+            <a href="" className="flex items-center gap-1 text-lg font-bold">
+              <FiUsers /> Help
+            </a>
+            <a
+              href="/dashboard"
+              className="bg-gradient-ibiza w-min rounded-md px-7 py-1 text-lg font-bold text-white"
+            >
+              Dashboard
+            </a>
           </ul>
         </nav>
       </div>

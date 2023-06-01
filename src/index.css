@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 @layer components {
   .cornered-border {
     border-radius: 0 0.55rem 0 0.55rem;
@@ -28,5 +32,53 @@
     box-shadow: 0px 7px 21px 0px rgba(245, 24, 24, 0.4);
     background-image: linear-gradient(to left, #ff4c31, #d60939, #ff4c31);
     background-position: right;
+  }
+  .bg-btn {
+    background-image: linear-gradient(to left, #ff4c31, #d60939, #ff4c31);
+    background-position: right;
+    background-size: 200%;
+  }
+  .bg-gradient-moonlit {
+    background: linear-gradient(to right, #2c5364, #203a43, #0f2027) !important;
+  }
+  .box-2 {
+    box-shadow: 0 0.1rem 0.7rem rgb(0 0 0 / 32%);
+  }
+
+  .bg-gradient-ibiza {
+    background: #ee0979;
+    background: -webkit-linear-gradient(45deg, #ee0979, #ff6a00) !important;
+    background: linear-gradient(45deg, #ee0979, #ff6a00) !important;
+  }
+  .form-select {
+    color: #c0c8d1;
+    background-color: #1e1e1e;
+    border: 1px solid rgb(255 255 255 / 34%);
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    padding-left: 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.1rem;
+  }
+  .bg-gradient-deepblue {
+    background: #6a11cb;
+    background: -webkit-linear-gradient(45deg, #6a11cb, #2575fc) !important;
+    background: linear-gradient(45deg, #6a11cb, #2575fc) !important;
+  }
+  .btn-outline-warning {
+    color: #ffc107;
+    border-color: #ffc107;
+  }
+  .btn-outline-warning:hover {
+    color: #000;
+    background-color: #ffc107;
+    border-color: #ffc107;
+  }
+  .main {
+    width: min(100%, 90rem);
+    margin-inline: auto;
+  }
+  .bg-gradient-blues {
+    background: linear-gradient(to right, #56ccf2, #2f80ed) !important;
   }
 }

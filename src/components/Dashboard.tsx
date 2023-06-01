@@ -24,11 +24,7 @@ import { BiStats } from "react-icons/bi";
 import { FaQuestionCircle } from "react-icons/fa";
 import { RiFolderWarningLine } from "react-icons/ri";
 import { LuBanknote } from "react-icons/lu";
-// import { MdWifiOff } from "react-icons/md";
-// import { AiOutlineWifi } from "react-icons/ai";
-// import { HiViewGrid } from "react-icons/hi";
-
-import Card from "./dashboard/Card";
+import { NavLink, Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -116,117 +112,85 @@ export default function Dashboard() {
     {
       text: "Dashboard",
       active: true,
+      link: "",
       icon: <AiFillDashboard className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Deposit",
       active: false,
+      link: "deposit",
       icon: <LuBanknote className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Affiliate program",
       active: false,
+      link: "affiliate",
       icon: <BsPeopleFill className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Bonuses",
       active: false,
+      link: "bonuses",
       icon: <TbMilitaryAward className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Home",
       active: false,
+      link: "",
       icon: <AiTwotoneHome className="text-xl font-bold text-cblack" />,
     },
     {
       text: "FAQ",
       active: false,
+      link: "/faq",
       icon: <FaQuestionCircle className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Affiliate program",
       active: false,
+      link: "/affiliate-program",
       icon: <BsPeopleFill className="text-xl font-bold text-cblack" />,
     },
     {
       text: "About Us",
       active: false,
+      link: "/about-us",
       icon: <RiFolderWarningLine className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Terms",
       active: false,
+      link: "/terms",
       icon: <GiCircleClaws className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Statistics",
       active: false,
+      link: "/#statistics",
       icon: <BiStats className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Plans",
       active: false,
+      link: "/#plans",
       icon: <BsFillGridFill className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Contacts",
       active: false,
+      link: "contacts",
       icon: <TiMessages className="text-xl font-bold text-cblack" />,
     },
   ]);
 
-  const [cards, setCards] = useState([
-    {
-      coinType: "Binance Coin",
-      amount: 0.000000000123,
-      power: 0,
-      imgSrc: "bnb.svg",
-      color: "linear-gradient(to right, #8e2de2, #4a00e0)",
-    },
-    {
-      coinType: "Tron",
-      amount: 0.000000000123,
-      power: 0,
-      imgSrc: "tron.svg",
-      color: "linear-gradient(to right, #2c5364, #203a43, #0f2027)",
-    },
-    {
-      coinType: "Dodge Coin",
-      amount: 0.000000000123,
-      power: 0,
-      imgSrc: "dogecoin.svg",
-      color: "linear-gradient(45deg, #00b09b, #96c93d)",
-    },
-    {
-      coinType: "Bit Coin",
-      amount: 0.000000000123,
-      power: 0,
-      imgSrc: "bitcoin1.svg",
-      color: "linear-gradient(45deg, #ee0979, #ff6a00)",
-    },
-  ]);
-
-  // const [accountSummary, setAccountSummary] = useState([
-  //   {
-  //     amount: 0.000000000123,
-  //     icon: <AiOutlineWifi />,
-  //     color: "success",
-  //   },
-  //   {
-  //     amount: 0.000000000123,
-  //     icon: <MdWifiOff />,
-  //     color: "success",
-  //   },
-  //   {
-  //     amount: 0.000000000123,
-  //     icon: <HiViewGrid />,
-  //     color: "success",
-  //   },
-  // ]);
-
   return (
     <Box
-      sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      sx={{
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        paddingBottom: "50px",
+      }}
     >
       <CssBaseline />
       <AppBar
@@ -235,7 +199,7 @@ export default function Dashboard() {
         sx={{ backgroundColor: "white", height: "5rem", boxShadow: "none" }}
         className="w-[80%]"
       >
-        <Toolbar className="w-full h-full shadow-md flex items-center justify-end">
+        <Toolbar className="flex h-full w-full items-center justify-between shadow-md">
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -243,18 +207,18 @@ export default function Dashboard() {
             edge="start"
             sx={{
               marginRight: 5,
-              ...(open && { display: "none" }),
+              ...(open && { opacity: "0" }),
               borderRight: "2px solid black",
             }}
           >
-            <img src="tron.svg" className="w-8 h-8 " />
+            <img src="tron.svg" className="h-8 w-8 " />
           </IconButton>
           <IconButton
             color="inherit"
             onClick={handleDrawerOpen}
-            className="w-[10%] h-[80%]"
+            className="h-[80%] w-[10%]"
           >
-            <button className="w-full h-full rounded-tr-lg rounded-bl-lg bg-colord text-white text-base">
+            <button className="h-full w-full rounded-bl-lg rounded-tr-lg bg-colord text-base text-white">
               Log out
             </button>
           </IconButton>
@@ -263,10 +227,10 @@ export default function Dashboard() {
       <Drawer variant="permanent" open={open}>
         <DrawerHeader
           sx={{ paddingY: "1.3rem" }}
-          className="w-full flex items-center justify-between gap-8"
+          className="flex w-full items-center justify-between gap-8"
         >
-          <div className="w-full h-full flex items-center justify-center gap-2">
-            <img src="tron.svg" alt="" className="w-8 h-8" />
+          <div className="flex h-full w-full items-center justify-center gap-2">
+            <img src="tron.svg" alt="" className="h-8 w-8" />
             <span className="text-xl font-bold text-cblack">TRX Mining</span>
           </div>
           <IconButton onClick={handleDrawerClose}>
@@ -276,7 +240,7 @@ export default function Dashboard() {
         <Divider />
         <List
           sx={{
-            px: 2,
+            px: 1,
             display: "flex",
             flexDirection: "column",
             gap: 2,
@@ -285,14 +249,14 @@ export default function Dashboard() {
         >
           {open && (
             <span
-              className="text-sm mx-2 font-semibold uppercase transition"
+              className="mx-2 text-sm font-semibold uppercase transition"
               onClick={() => setSidebarItems}
             >
               Account
             </span>
           )}
           {sidebarItems.slice(0, 4).map((item, index) => {
-            const { text, active, icon } = item;
+            const { text, active, link, icon } = item;
             return (
               <ListItem
                 key={index}
@@ -300,42 +264,44 @@ export default function Dashboard() {
                 sx={{ display: "block" }}
                 className={`${
                   !active ? "bg-gray-200" : "bg-colord"
-                } hover:bg-colord hover:text-white transition-all duration-300`}
+                } transition-all duration-300 hover:bg-colord hover:text-white`}
               >
-                <ListItemButton
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  }}
-                >
-                  <ListItemIcon
+                <NavLink to={link}>
+                  <ListItemButton
                     sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : "auto",
-                      justifyContent: "center",
+                      minHeight: 48,
+                      justifyContent: open ? "initial" : "center",
+                      px: 2.5,
                     }}
                   >
-                    {icon}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={text}
-                    sx={{ opacity: open ? 1 : 0 }}
-                    className={`hover:text-white ${
-                      active ? "text-white" : "text-cblack"
-                    }`}
-                  />
-                </ListItemButton>
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 0,
+                        mr: open ? 3 : "auto",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={text}
+                      sx={{ opacity: open ? 1 : 0 }}
+                      className={`hover:text-white ${
+                        active ? "text-white" : "text-cblack"
+                      }`}
+                    />
+                  </ListItemButton>
+                </NavLink>
               </ListItem>
             );
           })}
           {open && (
-            <span className="text-sm mx-2 font-semibold uppercase transition-all duration-300">
+            <span className="mx-2 text-sm font-semibold uppercase transition-all duration-300">
               other
             </span>
           )}
           {sidebarItems.slice(4).map((item, index) => {
-            const { text, active, icon } = item;
+            const { text, active, link, icon } = item;
             return (
               <ListItem
                 key={index}
@@ -343,74 +309,45 @@ export default function Dashboard() {
                 sx={{ display: "block" }}
                 className={`${
                   !active ? "bg-gray-200" : "bg-colord"
-                } hover:bg-colord hover:text-white transition-all duration-300 ${
-                  active && "text-white"
-                }`}
+                } transition-all duration-300 hover:bg-colord hover:text-white`}
               >
-                <ListItemButton
-                  sx={{
-                    minHeight: 48,
-                    justifyContent: open ? "initial" : "center",
-                    px: 2.5,
-                  }}
-                >
-                  <ListItemIcon
+                <NavLink to={link}>
+                  <ListItemButton
                     sx={{
-                      minWidth: 0,
-                      mr: open ? 3 : "auto",
-                      justifyContent: "center",
+                      minHeight: 48,
+                      justifyContent: open ? "initial" : "center",
+                      px: 2.5,
                     }}
                   >
-                    {icon}
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={text}
-                    sx={{ opacity: open ? 1 : 0 }}
-                    className={`hover:text-white ${
-                      active ? "text-white" : "text-cblack"
-                    }`}
-                  />
-                </ListItemButton>
+                    <ListItemIcon
+                      sx={{
+                        minWidth: 0,
+                        mr: open ? 3 : "auto",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {icon}
+                    </ListItemIcon>
+                    <ListItemText
+                      primary={text}
+                      sx={{ opacity: open ? 1 : 0 }}
+                      className={`hover:text-white ${
+                        active ? "text-white" : "text-cblack"
+                      }`}
+                    />
+                  </ListItemButton>
+                </NavLink>
               </ListItem>
             );
           })}
         </List>
       </Drawer>
-      <div className="w-[75%] h-full flex flex-col items-center justify-center pt-[8rem] py-[2rem] gap-8">
-        <div className="w-full h-fit flex flex-col items-start justify-center gap-4">
-          <span className="text-cblack text-4xl font-semibold">
-            Hi, ishimweemmanuel2005 👋
-          </span>
-          <span className="w-full text-cblack text-start text-base font-semibold p-4 border border-cblack rounded-md bg-gray-200">
-            Only today the bonus +5% to the deposit when replenishing from $25
-          </span>
-        </div>
-        <div className="w-full h-fit flex flex-col items-center justify-center gap-4">
-          <span className="text-cblack uppercase text-base font-bold self-start">
-            power distribution
-          </span>
-          <div className="w-full h-fit flex items-center justify-between border-t border-t-gray-200 py-4 gap-4">
-            {cards.map((card, index) => {
-              return (
-                <Card
-                  key={index}
-                  coinType={card.coinType}
-                  amount={card.amount}
-                  power={card.power}
-                  imgSrc={card.imgSrc}
-                  color={card.color}
-                />
-              );
-            })}
-          </div>
-        </div>
-        <div className="w-full h-fit flex flex-col items-center justify-center gap-4">
-          <span className="text-cblack uppercase text-base font-bold self-start">
-            Account summary
-          </span>
-        </div>
-        <div onClick={() => setCards}></div>
-      </div>
+      <Outlet />
+      <footer className="fixed bottom-0 flex w-full flex-col items-center justify-center gap-2 border-t border-t-gray-200 bg-white py-4">
+        <p className="font-medium lg:ml-32 lg:text-lg">
+          Copyright © 2023. All right reserved.
+        </p>
+      </footer>
     </Box>
   );
 }
