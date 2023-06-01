@@ -4,6 +4,8 @@ import { FiLink, FiUsers } from "react-icons/fi";
 import { LuCopy } from "react-icons/lu";
 import Example from "./DepTabs";
 import { BiWallet } from "react-icons/bi";
+
+
 const AffiliteProgram: React.FC = () => {
   return (
     <div className="flex h-full w-[75%] flex-col items-center justify-center gap-8 py-[2rem] pt-[8rem]">

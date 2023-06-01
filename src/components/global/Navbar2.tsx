@@ -2,6 +2,8 @@ import { useState } from "react";
 import { BiHome } from "react-icons/bi";
 import { FiUsers } from "react-icons/fi";
 import { IoAnalyticsSharp } from "react-icons/io5";
+
+
 export default function NavBar2() {
   const [isOpen, setIsOpen] = useState(false);
 

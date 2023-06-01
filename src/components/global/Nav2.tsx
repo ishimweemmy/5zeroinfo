@@ -1,4 +1,15 @@
-export default function Nav2() {
+import { useState } from "react";
+import SignUpModal from "./SignUpModal";
+import LoginModal from "./LoginModal";
+
+const Nav2 = () => {
+  const [isLOpen, setIsLOpen] = useState(false);
+  const [isSOpen, setIsSOpen] = useState(false);
+  const handleLClose = () => setIsLOpen(false);
+  const handleLOpen = () => setIsLOpen(true);
+  const handleSClose = () => setIsSOpen(false);
+  const handleSOpen = () => setIsSOpen(true);
+
   return (
     <header className="sticky top-0 z-10 hidden w-full items-center justify-between bg-white px-10 shadow-lg lg:flex">
       <a href="#">
@@ -41,13 +52,24 @@ export default function Nav2() {
           </li>
         </ul>
       </nav>
-
-      <a
-        className="btn cornered-border m-3 px-8 py-4 text-white hover:bg-left"
-        href="#"
-      >
-        Get Started
-      </a>
+      <SignUpModal isOpen={isLOpen} handleClose={handleLClose} />
+      <LoginModal isOpen={isSOpen} handleClose={handleSClose} />
+      <div className="flex h-fit gap-4">
+        <button
+          className="btn cornered-border m-3 px-8 py-4 text-white hover:bg-left"
+          onClick={handleSOpen}
+        >
+          Login
+        </button>
+        <button
+          className="btn cornered-border m-3 px-8 py-4 text-white hover:bg-left"
+          onClick={handleLOpen}
+        >
+          Register
+        </button>
+      </div>
     </header>
   );
-}
+};
+
+export default Nav2;

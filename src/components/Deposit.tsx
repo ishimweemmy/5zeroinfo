@@ -28,30 +28,6 @@ const Deposit: React.FC = () => {
                 />
                 <p>Binance coin</p>
               </div>
-              {/* <div className="flex flex-col items-center justify-center gap-1 rounded-md p-2">
-                <img
-                  src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=014"
-                  className="h-12 w-12 rounded-md bg-white p-1"
-                  alt=""
-                />
-                <p>Binance coin</p>
-              </div>
-              <div className="flex flex-col items-center justify-center gap-1 rounded-md p-2">
-                <img
-                  src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=014"
-                  className="h-12 w-12 rounded-md bg-white p-1"
-                  alt=""
-                />
-                <p>Binance coin</p>
-              </div>
-              <div className="flex flex-col items-center justify-center gap-1 rounded-md p-2">
-                <img
-                  src="https://cryptologos.cc/logos/binance-coin-bnb-logo.svg?v=014"
-                  className="h-12 w-12 rounded-md bg-white p-1"
-                  alt=""
-                />
-                <p>Binance coin</p>
-              </div> */}
             </div>
             <div className="flex w-full flex-col gap-2 lg:grid lg:grid-cols-2">
               <div className="flex flex-col justify-start gap-2 py-3">
