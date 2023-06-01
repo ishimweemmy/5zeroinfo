@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Tab } from "@headlessui/react";
 import classNames from "classnames";
 export default function Example() {

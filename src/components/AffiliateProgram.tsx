@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineWifi } from "react-icons/ai";
 import { BsFillGiftFill } from "react-icons/bs";
 import { FiLink, FiUsers } from "react-icons/fi";
 import { LuCopy } from "react-icons/lu";
