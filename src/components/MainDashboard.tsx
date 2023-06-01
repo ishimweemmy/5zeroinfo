@@ -2,17 +2,18 @@ import React, { useState } from "react";
 import Card from "./dashboard/Card";
 import { AiOutlineWifi } from "react-icons/ai";
 import { BsFillGridFill, BsWifiOff } from "react-icons/bs";
+import ReinvestModal from "./ReInvest";
+import WithdrawModal from "./Withdraw";
 const MainDashboard: React.FC = () => {
-  const [cards, setCard] = useState([
+  const [cards, setCards] = useState([
     {
       coinType: "Tron",
       amount: 0.000000000123,
       power: 0,
       imgSrc: "tron.svg",
       color: "linear-gradient(to right, #2c5364, #203a43, #0f2027)",
-    },
+    }
   ]);
-
   return (
     <div className="flex h-full w-[75%] flex-col items-center justify-center gap-8 py-[2rem] pt-[8rem]">
       <div className="flex h-fit w-full flex-col items-start justify-center gap-4">
@@ -58,7 +59,7 @@ const MainDashboard: React.FC = () => {
           Account summary
         </span>
       </div>
-      <div onClick={() => setCard}></div>
+      <div onClick={() => setCards}></div>
       <div className="flex w-full grid-cols-2 flex-col items-center justify-center gap-4 border-t border-t-gray-200 py-4 lg:grid lg:grid-cols-3 lg:gap-2">
         <div className="flex w-full items-center justify-between rounded-lg bg-cblack p-3 shadow-md">
           <div>
@@ -113,12 +114,8 @@ const MainDashboard: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center justify-center gap-1">
-                <button className="bg-gradient-moonlit rounded-md px-3 py-[0.4rem] font-medium text-white">
-                  Reinvest
-                </button>
-                <button className="rounded-md border-[0.01rem] border-gray-400 px-3 py-[0.4rem] font-medium text-white hover:bg-slate-500 hover:bg-opacity-20">
-                  Withdraw
-                </button>
+                <ReinvestModal />
+                <WithdrawModal />
               </div>
             </div>
           </div>

@@ -3,10 +3,10 @@ import { FiChevronRight } from "react-icons/fi";
 
 const Terms: React.FC = () => {
   return (
-    <div className="px-3 pt-20 lg:px-20 lg:pt-0">
-      <div className="mb-10 flex w-full flex-col items-center justify-center gap-10">
-        <h1 className="text-3xl font-bold lg:text-5xl">Terms of use</h1>
-        <p className="text-lg font-bold lg:text-xl">
+    <div className="lg:px-20 px-3 pt-20 lg:pt-0">
+      <div className="mb-10 flex w-full flex-col items-center justify-center gap-10 pt-10">
+        <h1 className="text-3xl lg:text-5xl font-bold">Terms of use</h1>
+        <p className="text-lg lg:text-xl font-bold">
           The Cryptofy website futures are available for use only by registered
           members. To register an account on Cryptofy you must be at least 18
           years old. By registering on the Cryptofy website you agree and fully

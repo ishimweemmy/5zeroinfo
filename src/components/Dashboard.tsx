@@ -24,7 +24,7 @@ import { BiStats } from "react-icons/bi";
 import { FaQuestionCircle } from "react-icons/fa";
 import { RiFolderWarningLine } from "react-icons/ri";
 import { LuBanknote } from "react-icons/lu";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
 const drawerWidth = 240;
 
@@ -136,7 +136,7 @@ export default function Dashboard() {
     {
       text: "Home",
       active: false,
-      link: "",
+      link: "/",
       icon: <AiTwotoneHome className="text-xl font-bold text-cblack" />,
     },
     {
@@ -172,16 +172,27 @@ export default function Dashboard() {
     {
       text: "Plans",
       active: false,
-      link: "/#plans",
+      link: "/plans",
       icon: <BsFillGridFill className="text-xl font-bold text-cblack" />,
     },
     {
       text: "Contacts",
       active: false,
-      link: "contacts",
+      link: "/contacts",
       icon: <TiMessages className="text-xl font-bold text-cblack" />,
     },
   ]);
+
+  const handleLableActiveness = (link: string) => {
+    setSidebarItems((prevData) => {
+      return prevData.map((data) => {
+        if (data.active) {
+          data.active = false;
+        }
+        return data.link === link ? { ...data, active: !data.active } : data;
+      });
+    });
+  };
 
   return (
     <Box
@@ -229,10 +240,13 @@ export default function Dashboard() {
           sx={{ paddingY: "1.3rem" }}
           className="flex w-full items-center justify-between gap-8"
         >
-          <div className="flex h-full w-full items-center justify-center gap-2">
+          <Link
+            to="/"
+            className="flex h-full w-full items-center justify-center gap-2"
+          >
             <img src="tron.svg" alt="" className="h-8 w-8" />
             <span className="text-xl font-bold text-cblack">TRX Mining</span>
-          </div>
+          </Link>
           <IconButton onClick={handleDrawerClose}>
             <BiArrowToLeft className="text-cblack" />
           </IconButton>
@@ -265,6 +279,7 @@ export default function Dashboard() {
                 className={`${
                   !active ? "bg-gray-200" : "bg-colord"
                 } transition-all duration-300 hover:bg-colord hover:text-white`}
+                onClick={() => handleLableActiveness(link)}
               >
                 <NavLink to={link}>
                   <ListItemButton
@@ -310,6 +325,7 @@ export default function Dashboard() {
                 className={`${
                   !active ? "bg-gray-200" : "bg-colord"
                 } transition-all duration-300 hover:bg-colord hover:text-white`}
+                onClick={() => handleLableActiveness(link)}
               >
                 <NavLink to={link}>
                   <ListItemButton

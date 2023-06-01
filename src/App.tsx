@@ -11,25 +11,28 @@ import FAQ from "./components/FAQ";
 import AboutUs from "./components/Aboutus";
 import AffilateProgram2 from "./components/AffiliateProgram2";
 import Terms from "./components/Terms";
+import Contacts from "./components/Contacts";
+import Pricing from "./components/Pricing";
 
 const App = () => {
   return (
     <div className="h-screen w-full">
       <NavWrapper>
-        <Route path="" element={<Landing />} />
+        <Route path="/" element={<Landing />}></Route>
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<MainDashboard />} />
           <Route path="deposit" element={<Deposit />} />
           <Route path="affiliate" element={<AffiliteProgram />} />
           <Route path="bonuses" element={<Bonuses />} />
         </Route>
-
-        <Route path="" element={<OthersWrapper />}>
+        <Route path="/" element={<OthersWrapper />}>
           <Route path="/faq" element={<FAQ />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/affiliate-program" element={<AffilateProgram2 />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/contacts" element={<Contacts />} />
         </Route>
+        <Route path="/plans" element={<Pricing />} />
       </NavWrapper>
     </div>
   );

@@ -7,9 +7,8 @@ import {
 import NavBar from "../components/global/Navbar";
 import Nav2 from "../components/global/Nav2";
 import Carousel from "../components/global/Carousel";
-import { Link } from "react-router-dom";
 
-const Landing = () => {
+function Landing() {
   return (
     <main className="px-3 font-muli text-custblack lg:px-0">
       <div className="hidden justify-start gap-5 border-b-[.000000001px] border-[#535a7076] py-5 pl-10 lg:flex">
@@ -43,6 +42,7 @@ const Landing = () => {
             your account, you can start earning your first coins from our
             TRXcoin Tron Time service!.
           </p>
+          {/* <div className="w-full flex flex-col justify-start items-baseline"> */}
           <input
             className="cornered-border lg:text-md w-full border-2 border-primred bg-transparent px-4 py-4 text-sm outline-none lg:w-[40rem] lg:px-8 lg:py-5"
             type="text"
@@ -51,6 +51,7 @@ const Landing = () => {
           <button className="btn cornered-border px-8 py-4 text-white hover:bg-left lg:mt-2">
             Start Mining
           </button>
+          {/* </div> */}
         </div>
       </section>
       <section className="flex w-full items-center justify-center lg:mt-52">
@@ -125,10 +126,7 @@ const Landing = () => {
           </p>
         </div>
       </section>
-      <section
-        className="flex flex-col items-center justify-center bg-[#fafafa]  py-10"
-        id="/plans"
-      >
+      <section className="flex flex-col items-center justify-center bg-[#fafafa]  py-10">
         <div className="mb-4 lg:mb-20 lg:mt-32">
           <p className="text-md mb-5 mt-10 text-left font-medium text-[#535a70] lg:text-center lg:text-lg">
             Our Investment plan for you
@@ -358,19 +356,19 @@ const Landing = () => {
         <hr className="text-[#0e141f]" />
         <div className="flex h-full items-center pt-10 lg:pl-16">
           <p className="text-[#736e73]">
-            Copyright 2023 All rights reserved by{" "}
+            Copyright ©2023 All rights reserved by{" "}
             <p className="text-secondred">Trxmining</p>
           </p>
           <div>
-            <Link to="#"></Link>
-            <Link to="#"></Link>
-            <Link to="#"></Link>
-            <Link to="#"></Link>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
           </div>
         </div>
       </footer>
     </main>
   );
-};
+}
 
 export default Landing;

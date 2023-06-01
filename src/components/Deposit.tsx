@@ -1,6 +1,7 @@
 import React from "react";
 import { BiChip, BiTrendingUp } from "react-icons/bi";
 import { BsActivity } from "react-icons/bs";
+import PaymentModal from "./PaymentModal";
 
 const Deposit: React.FC = () => {
   return (
@@ -95,9 +96,7 @@ const Deposit: React.FC = () => {
                     </div>
                   </div>
                   <div className="box-2 flex w-full items-center justify-center rounded-lg bg-cblack p-3">
-                    <button className="bg-gradient-ibiza w-full rounded-md px-7 py-1 text-lg font-bold lg:w-auto">
-                      make Deposit
-                    </button>
+                    <PaymentModal />
                   </div>
                 </div>
               </div>

@@ -6,6 +6,7 @@ export default {
       colors: {
         major: "white",
         coloring: "linear-gradient(to left, #ff4c31, #d60939, #ff4c31)",
+        // cblack: "#030e29",
         cblack: "#072366",
         colord: "#ff4c31",
         success: "#15ca20",
@@ -23,12 +24,10 @@ export default {
         img1: "url('/section_bg01.png')",
         "footer-bg": "url('/footer_bg.png')",
         banner: "url('/banner.svg')",
+        tron: "url('https://st4.depositphotos.com/1003293/23385/i/600/depositphotos_233851882-stock-photo-closeup-golden-tron-coin-trx.jpg')"
       }),
       gridTemplateColumns: {
         powerCard: "80% 20%",
-      },
-      screens: {
-        maxtablet: { max: "1100px" },
       },
     },
   },

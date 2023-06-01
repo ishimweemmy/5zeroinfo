@@ -1,37 +1,61 @@
 import { Slider } from "@mui/material";
 import { AiOutlinePlaySquare } from "react-icons/ai";
-import type { FC } from "react";
+import { useState, type FC } from "react";
 
-const card: FC<CurrencyCard> = ({ coinType, amount, power, imgSrc, color }) => {
+const Card: FC<CurrencyCard> = ({ coinType, amount, power, imgSrc, color }) => {
+  const [defaultValue, setDefaultValue] = useState(0);
   return (
     <div
-      className={`w-full h-fit rounded-lg p-2 px-4 py-4 relative`}
+      className={`relative h-fit w-full rounded-lg p-2 px-4 py-4`}
       style={{ background: color }}
     >
-      <div className="w-full grid grid-cols-powerCard ">
-        <div className="w-full flex flex-col items-start justify-center gap-2">
-          <span className="text-white text-base ">{coinType}</span>
-          <span className="text-white text-2xl font-bold ">{amount.toFixed(12)}</span>
-          <span className="text-white text-xs uppercase ">
+      <div className="grid w-full grid-cols-powerCard ">
+        <div className="flex w-full flex-col items-start justify-center gap-2">
+          <span className="text-base text-white ">{coinType}</span>
+          <span className="text-2xl font-bold text-white ">
+            {amount.toFixed(12)}
+          </span>
+          <span className="text-xs uppercase text-white ">
             power {power} gh/s
           </span>
         </div>
-        <img src={imgSrc} className="w-16 h-16 self-center" alt="" />
+        <img src={imgSrc} className="h-16 w-16 self-center" alt="" />
       </div>
-      <div className="w-full h-fit flex items-center justify-center gap-2 mt-4 ">
-        <AiOutlinePlaySquare className="text-white rotate-180 relative z-50" />
+      <div className="mt-4 flex h-fit w-full items-center justify-center gap-2 ">
+        <AiOutlinePlaySquare
+          className="relative z-50 rotate-180 text-white"
+          onClick={() =>
+            setDefaultValue((prev) => {
+              if (prev == 0) {
+                return prev;
+              }
+              return prev - 1;
+            })
+          }
+        />
         <Slider
           size="small"
-          defaultValue={70}
+          defaultValue={0}
+          value={defaultValue}
           aria-label="Small"
           valueLabelDisplay="auto"
           sx={{ color: "white", zIndex: 50 }}
         />
-        <AiOutlinePlaySquare className="text-white relative z-50" />
-        <div className="w-full h-12 bg-[#ffffff27] absolute bottom-0"></div>
+        <AiOutlinePlaySquare
+          className="relative z-50 text-white"
+          onClick={() =>
+            setDefaultValue((prev) => {
+              if (prev == 100) {
+                return prev;
+              }
+              return prev + 1;
+            })
+          }
+        />
+        <div className="absolute bottom-0 h-12 w-full bg-[#ffffff27]"></div>
       </div>
     </div>
   );
 };
 
-export default card;
+export default Card;

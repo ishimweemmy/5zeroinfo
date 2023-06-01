@@ -2,19 +2,13 @@ import { useState } from "react";
 import { BiHome } from "react-icons/bi";
 import { FiUsers } from "react-icons/fi";
 import { IoAnalyticsSharp } from "react-icons/io5";
-
-
 export default function NavBar2() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="box-shadow fixed left-0 top-0 z-10 w-full bg-white lg:hidden">
+    <header className="box-shadow fixed left-0 top-0 z-10 w-full bg-white lg:hidden text-cblack">
       <div className="flex items-center justify-between px-2">
-        <img
-          src="https://unxbot.com/unxtem24/trx_v2/assets/img/logo/logo.png"
-          className="w-50 mr-2 h-10"
-          alt="Logo"
-        />
+        <h1 className="text-3xl font-bold ml-2">TX Mining</h1>
         <div className="block lg:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -42,7 +36,7 @@ export default function NavBar2() {
           isOpen ? "block" : "hidden"
         }`}
       >
-        <nav className="w-full py-5 text-black">
+        <nav className="w-full py-5">
           <ul className="flex flex-col gap-3 pl-4">
             <a href="" className="flex items-center gap-1 text-lg font-bold">
               <BiHome /> Home

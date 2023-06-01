@@ -1,5 +1,6 @@
 import React from "react";
 import { BsFillGiftFill } from "react-icons/bs";
+import BonusModal from "./BonusModal";
 
 const Bonuses: React.FC = () => {
   return (
@@ -10,7 +11,7 @@ const Bonuses: React.FC = () => {
         </span>
         <div className="w-full border-t border-t-gray-200 pt-6">
           <div className="box-2 flex w-full justify-start rounded-lg bg-cblack">
-            <div className="flex h-[18rem] w-[35%] items-center justify-center rounded-l-lg bg-[#ffc107] px-1 py-20 text-4xl text-gray-300 text-opacity-40 lg:h-auto lg:w-[10%]">
+            <div className="flex h-[18rem] w-[35%] items-center justify-center rounded-l-lg bg-[#ffc107] px-1 py-20 text-4xl text-gray-200 text-opacity-50 lg:h-auto lg:w-[10%]">
               <BsFillGiftFill />
             </div>
             <div className="flex w-[65%] flex-col justify-center gap-2 py-4 pl-4 text-white lg:w-[80%]">
@@ -21,9 +22,7 @@ const Bonuses: React.FC = () => {
                 The bonus will be instantly credited to the power balance in
                 your account.
               </p>
-              <button className="btn-outline-warning self-start rounded-md border-[1px] p-2">
-                get bonus
-              </button>
+              <BonusModal />
             </div>
           </div>
         </div>

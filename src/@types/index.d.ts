@@ -12,14 +12,3 @@ interface AccountCard {
     icon: ReactNode,
     color: string
 }
-
-interface Modal {
-    isOpen: boolean
-    handleClose: () => void
-}
-
-interface FTextFieldProps {
-    label: string,
-    variant: TextFieldVariants,
-    children: ReactNode
-}

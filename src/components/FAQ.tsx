@@ -3,12 +3,12 @@ import { FiChevronRight } from "react-icons/fi";
 
 const FAQ: React.FC = () => {
   return (
-    <div className="px-20">
-      <div className="flex w-full flex-col items-center justify-center gap-2">
+    <div className="lg:px-20 px-3 pt-20 lg:pt-0">
+      <div className="flex w-full flex-col items-center justify-center gap-2 pt-10  text-cblack ">
         <h1 className="text-5xl font-bold">FAQ</h1>
         <p>Answers to all your questions.</p>
       </div>
-      <div className="flex flex-col justify-start gap-3">
+      <div className="flex flex-col justify-start gap-3 text-cblack">
         <div className="flex items-center gap-3">
           <div className="bg-gradient-ibiza rounded-md p-3 text-xl text-white">
             <FiChevronRight />
@@ -55,7 +55,7 @@ const FAQ: React.FC = () => {
         <h1 className="text-2xl font-bold"></h1>
         <p className="mb-2 text-lg"></p>
       </div>
-      <div className="flex flex-col justify-start gap-3">
+      <div className="flex flex-col justify-start gap-3 text-cblack">
         <div className="flex items-center gap-3">
           <div className="bg-gradient-ibiza rounded-md p-3 text-xl text-white">
             <FiChevronRight />
@@ -138,7 +138,7 @@ const FAQ: React.FC = () => {
           the instructions below.
         </p>
       </div>
-      <div className="mt-5 flex flex-col justify-start gap-3">
+      <div className="mt-5 flex flex-col justify-start gap-3 text-cblack mb-10">
         <div className="flex items-center gap-3">
           <div className="bg-gradient-ibiza rounded-md p-3 text-xl text-white">
             <FiChevronRight />

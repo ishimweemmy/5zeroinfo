@@ -1,12 +1,14 @@
 import { useState } from "react";
-import SignUpModal from "./SignUpModal";
-import LoginModal from "./LoginModal";
+import SignUpModal from "../Register";
+import LoginModal from "../Login";
 
 const Nav2 = () => {
   const [isLOpen, setIsLOpen] = useState(false);
   const [isSOpen, setIsSOpen] = useState(false);
+
   const handleLClose = () => setIsLOpen(false);
   const handleLOpen = () => setIsLOpen(true);
+
   const handleSClose = () => setIsSOpen(false);
   const handleSOpen = () => setIsSOpen(true);
 
@@ -52,20 +54,20 @@ const Nav2 = () => {
           </li>
         </ul>
       </nav>
-      <SignUpModal isOpen={isLOpen} handleClose={handleLClose} />
-      <LoginModal isOpen={isSOpen} handleClose={handleSClose} />
+      <SignUpModal isOpen={isSOpen} handleClose={handleSClose} />
+      <LoginModal isOpen={isLOpen} handleClose={handleLClose} />
       <div className="flex h-fit gap-4">
         <button
           className="btn cornered-border m-3 px-8 py-4 text-white hover:bg-left"
-          onClick={handleSOpen}
+          onClick={handleLOpen}
         >
           Login
         </button>
         <button
           className="btn cornered-border m-3 px-8 py-4 text-white hover:bg-left"
-          onClick={handleLOpen}
+          onClick={handleSOpen}
         >
-          Register
+         Register 
         </button>
       </div>
     </header>
